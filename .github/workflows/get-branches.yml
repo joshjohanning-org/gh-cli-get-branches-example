@@ -32,7 +32,7 @@ jobs:
  
       - name: curl example
         run: | 
-          curl -LX PUT 'https://api.github.com/repos/${{ GITHUB.REPOSITORY }}/branches' \
+          curl -LX GET 'https://api.github.com/repos/${{ GITHUB.REPOSITORY }}/branches' \
             --header 'Accept: application/vnd.github.v3+json' \
             --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'
             
