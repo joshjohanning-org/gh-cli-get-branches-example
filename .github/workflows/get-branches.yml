@@ -27,7 +27,8 @@ jobs:
 
       - name: gh cli example
         run: |
-          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+          # echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+          GH_TOKEN=${{ secrets.GITHUB_TOKEN }}
           gh api -X GET /repos/${{ GITHUB.REPOSITORY }}/branches --jq='.[].name'
  
       - name: curl example
